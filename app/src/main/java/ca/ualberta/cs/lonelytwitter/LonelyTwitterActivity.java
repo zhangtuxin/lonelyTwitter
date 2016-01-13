@@ -40,6 +40,7 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				Tweet latestTweet = new NormalTweet(text);
+				Mood currentmood = new mood(System.currentTimeMillis(),text);
 				ImportantTweet latestImportantTweet = new ImportantTweet(text);
 				// latestTweet.setMessage(latestTweet.getMessage() + "!");
 				saveInFile(text, new Date(System.currentTimeMillis()));
