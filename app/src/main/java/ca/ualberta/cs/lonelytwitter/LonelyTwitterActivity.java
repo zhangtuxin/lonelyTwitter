@@ -32,7 +32,7 @@ public class LonelyTwitterActivity extends Activity {
 
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
-	
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -40,9 +40,9 @@ public class LonelyTwitterActivity extends Activity {
 		setContentView(R.layout.main);
 
 		bodyText = (EditText) findViewById(R.id.body);
-		Button saveButton = (Button) findViewById(R.id.save);
+		//Button saveButton = (Button) findViewById(R.id.save);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
-
+		Button saveButton = (Button) findViewById(R.id.save);
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
@@ -59,6 +59,18 @@ public class LonelyTwitterActivity extends Activity {
 
 			}
 		});
+
+		Button clearButton = (Button) findViewById(R.id.clear);
+		clearButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v){
+				setResult(RESULT_OK);
+				tweets.clear();
+				saveInFile();
+				finish();
+			}
+
+		});
+
 	}
 
 	@Override
@@ -90,7 +102,7 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException();
 		}
 	}
-	
+
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,
