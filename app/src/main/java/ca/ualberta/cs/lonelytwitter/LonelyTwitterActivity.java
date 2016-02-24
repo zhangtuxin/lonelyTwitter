@@ -70,7 +70,21 @@ public class LonelyTwitterActivity extends Activity {
         Button searchButton = (Button)findViewById(R.id.clear);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                String search_string = bodyText.getText().toString();
+                String searchmessage = bodyText.getText().toString(); //use the search message to implement search string.
+                String search_string = "{\n" +
+                        "    \"query\": {\n" +
+                        "        \"filtered\" : {\n" +
+                        "            \"query\" : {\n" +
+                        "                \"query_string\" : {\n" +
+                        "                    \"query\" : \"test\"\n" +
+                        "                }\n" +
+                        "            },\n" +
+                        "            \"filter\" : {\n" +
+                        "                \"term\" : { \"search_message\" : \"search_message\" }\n" +
+                        "            }\n" +
+                        "        }\n" +
+                        "    }\n" +
+                        "}";
                 ElasticsearchTweetController.SearchTweetsTask searchTweetsTask = new ElasticsearchTweetController.SearchTweetsTask();
                 try {
                     searchTweetsTask.execute(search_string);
