@@ -57,9 +57,9 @@ public class ElasticsearchTweetController {
             return tweets;
         }
     }
-    public static ArrayList<Tweet> getTweets() {
-        verifyClient();
-    }
+//    public static ArrayList<Tweet> getTweets() {
+//        verifyClient();
+//    }
     public static class SearchTweetsTask extends AsyncTask<String, Void, ArrayList<Tweet>> {
         @Override
         protected ArrayList<Tweet> doInBackground(String... search_strings) {
@@ -67,7 +67,6 @@ public class ElasticsearchTweetController {
 
 
             ArrayList<Tweet> tweets = new ArrayList<Tweet>();
-            String search_string = ""
 
 
             Search search = new Search.Builder(search_strings[0])
