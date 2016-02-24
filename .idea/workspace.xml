@@ -21,26 +21,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LonelyTwitterActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LonelyTwitterActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.37878788">
+              <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
               <folding>
                 <element signature="e#1524#2115#0" expanded="true" />
                 <element signature="e#2114#2115#0" expanded="true" />
-                <element signature="e#2223#3691#0" expanded="true" />
-                <element signature="e#3690#3691#0" expanded="true" />
+                <element signature="e#2223#3054#0" expanded="true" />
+                <element signature="e#3053#3054#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElasticsearchTweetController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ElasticsearchTweetController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54545456">
-              <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="e#954#961#0" expanded="true" />
                 <element signature="e#2375#2382#0" expanded="true" />
@@ -1471,8 +1471,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java" />
       </list>
     </option>
   </component>
@@ -1571,6 +1571,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1732,6 +1733,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b4741ba6-6cea-484b-bcd1-a4a7d96532e4" name="Default" comment="" />
@@ -1743,7 +1747,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="309" y="53" width="1400" height="960" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1776,6 +1780,14 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -1792,26 +1804,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
-            <element signature="e#1524#2115#0" expanded="true" />
-            <element signature="e#2114#2115#0" expanded="true" />
-            <element signature="e#2223#3691#0" expanded="true" />
-            <element signature="e#3690#3691#0" expanded="true" />
+            <element signature="e#954#961#0" expanded="true" />
+            <element signature="e#2375#2382#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54545456">
-          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.37878788">
+          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
           <folding>
-            <element signature="e#954#961#0" expanded="true" />
-            <element signature="e#2375#2382#0" expanded="true" />
+            <element signature="e#1524#2115#0" expanded="true" />
+            <element signature="e#2114#2115#0" expanded="true" />
+            <element signature="e#2223#3054#0" expanded="true" />
+            <element signature="e#3053#3054#0" expanded="true" />
           </folding>
         </state>
       </provider>
