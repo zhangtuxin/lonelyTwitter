@@ -60,12 +60,23 @@ public class LonelyTwitterActivity extends Activity {
 
                 // TODO: Replace with Elasticsearch
                 AsyncTask<NormalTweet, Void, Void> execute = new ElasticsearchTweetController.AddTweetTask();
-                execute.execute();
+                execute.execute(latestTweet);
                 //saveInFile();
 
                 setResult(RESULT_OK);
             }
         });
+
+//        Button searchButton = (Button)findViewById(R.id.clear);
+//        searchButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v){
+//                String text = bodyText.getText().toString();
+//                AsyncTask<String, Void, Void> execute = new ElasticsearchTweetController.SearchTweetsTask();
+//                execute.execute();
+//
+//                setResult(RESULT_OK);
+//            }
+//        });
     }
 
     @Override

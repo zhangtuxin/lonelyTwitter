@@ -57,10 +57,42 @@ public class ElasticsearchTweetController {
             return tweets;
         }
     }
-    //public static ArrayList<Tweet> getTweets() {
-    //    verifyClient();
-    //}
+    public static ArrayList<Tweet> getTweets() {
+        verifyClient();
+    }
+    public static class SearchTweetsTask extends AsyncTask<String, Void, ArrayList<Tweet>> {
+        @Override
+        protected ArrayList<Tweet> doInBackground(String... search_strings) {
+            verifyClient();
 
+
+            ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+            String search_string = ""
+
+
+            Search search = new Search.Builder(search_strings[0])
+                    .addIndex("testing")
+                    .addType("tweet")
+                    .build();
+
+            try {
+                SearchResult execute = client.execute(search);
+                if(execute.isSucceeded()) {
+                    // Return our list of tweets
+                    List<NormalTweet> returned_tweets = execute.getSourceAsObjectList(NormalTweet.class);
+                    tweets.addAll(returned_tweets);
+                } else {
+                    // TODO: Add an error message, because that other thing was puzzling.
+                    // TODO: Right here it will trigger if the search fails
+                    Log.i("TODO", "We actually failed here, searching for tweets");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return tweets;
+        }
+    }
     //TODO: A function that adds a tweet
     public static class AddTweetTask extends AsyncTask<NormalTweet, Void, Void> {
         @Override
