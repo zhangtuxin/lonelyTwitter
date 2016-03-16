@@ -28,7 +28,9 @@ public class TweetAdapter extends ArrayAdapter<Tweet> {
         String dateString = tweet.getDate().toString();
 
         //TODO: initialize this:
-        Bitmap thumbnail = null;
+//        Bitmap thumbnail = null;
+
+        Bitmap thumbnail = tweet.getThumbnail();
 
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
@@ -51,4 +53,6 @@ public class TweetAdapter extends ArrayAdapter<Tweet> {
         // Return the completed view to render on screen
         return convertView;
     }
+
+
 }
