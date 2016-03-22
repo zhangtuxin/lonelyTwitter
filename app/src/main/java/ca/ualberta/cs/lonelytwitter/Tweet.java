@@ -64,7 +64,22 @@ public abstract class Tweet {
         return thumbnail;
     }
 
+    //@Override
     public abstract Boolean isImportant();
+
+    @Override
+    public String toString() {
+        // Some people thought they would be funny and add tweets without dates...
+        if(date == null) {
+            if(message == null) {
+                return "";
+            } else {
+                return message;
+            }
+        }
+        return date.toString() + " | " + message;
+    }
+
 
     public Date getDate() {
         return this.date;
@@ -83,18 +98,5 @@ public abstract class Tweet {
             throw new TweetTooLongException();
         }
         this.message = message;
-    }
-
-    @Override
-    public String toString() {
-        // Some people thought they would be funny and add tweets without dates...
-        if(date == null) {
-            if(message == null) {
-                return "";
-            } else {
-                return message;
-            }
-        }
-        return date.toString() + " | " + message;
     }
 }

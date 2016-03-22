@@ -3,7 +3,6 @@ package ca.ualberta.cs.lonelytwitter;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -21,7 +20,8 @@ public class LonelyTwitterActivity extends Activity {
     private EditText bodyText;
     private ListView oldTweetsList;
 
-    private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+    private TweetList myTweets;
+    private ArrayList<Tweet> tweets;
     private ArrayAdapter<Tweet> adapter;
 
     private Button saveButton;
@@ -30,8 +30,11 @@ public class LonelyTwitterActivity extends Activity {
         return adapter;
     }
 
+
     private ImageButton pictureButton;
     private Bitmap thumbnail;
+
+    int numImportant;
 
     static final int REQUEST_CAPTURING_IMAGE = 1234;
     /**
@@ -44,7 +47,6 @@ public class LonelyTwitterActivity extends Activity {
 
         bodyText = (EditText) findViewById(R.id.tweetMessage);
         oldTweetsList = (ListView) findViewById(R.id.tweetsList);
-
 
 	// http://developer.android.com/training/camera/photobasics.html
         pictureButton = (ImageButton) findViewById(R.id.pictureButton);
@@ -64,9 +66,10 @@ public class LonelyTwitterActivity extends Activity {
                 String text = bodyText.getText().toString();
                 NormalTweet latestTweet = new NormalTweet(text);
 
-                tweets.add(latestTweet);
+                myTweets.add(latestTweet);
 
                 latestTweet.addThumbnail(thumbnail);
+                adapter.insert(latestTweet, 0);
                 adapter.notifyDataSetChanged();
 
                 // Add the tweet to Elasticsearch
@@ -96,20 +99,29 @@ public class LonelyTwitterActivity extends Activity {
         try {
             tweets = new ArrayList<Tweet>();
             tweets.addAll(getTweetsTask.get());
+            myTweets = new TweetList(tweets);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
 
+        //Count important tweets
+        numImportant = 0;
+        for ( Tweet aTweet: myTweets.getTweets() ){
+            if (aTweet.isImportant() == Boolean.TRUE){
+                numImportant++;
+            }
+        }
+
 //        adapter = new ArrayAdapter<Tweet>(this, R.layout.list_item, tweets);
         // Binds tweet list with view, so when our array updates, the view updates with it
-        adapter = new TweetAdapter(this, tweets); /* NEW! */
+        //adapter = new TweetAdapter(this, tweets); /* NEW! */
+        adapter = new TweetAdapter(this, myTweets.getTweets());
         oldTweetsList.setAdapter(adapter);
     }
 
-	// http://developer.android.com/training/camera/photobasics.html
-
+    // http://developer.android.com/training/camera/photobasics.html
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent){
         if (requestCode == REQUEST_CAPTURING_IMAGE && resultCode == RESULT_OK){
